@@ -81,5 +81,6 @@
   ],
   "lint-staged": {
     "(*.md|*.css|*.yml|*.yaml|*.ts|*.js|*.mjs|*.cjs|*.mts|*.cts|*.jsx|*.tsx|*.astro|*.vue)": "npm run fix:prettier"
-  }
+  },
+  "dependencies": {}
 }

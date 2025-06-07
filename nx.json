@@ -69,16 +69,16 @@
     }
   },
   "release": {
-    "projects": ["packages/js", "packages/vue", "packages/nuxt"],
+    "projects": ["packages/js", "packages/vue", "packages/nuxt", "packages/react"],
     "version": {
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
       "manifestRootsToUpdate": [
-      {
-        "path": "build/{projectRoot}",
-        "preserveLocalDependencyProtocols": false
-      }
-    ],
+        {
+          "path": "build/{projectRoot}",
+          "preserveLocalDependencyProtocols": false
+        }
+      ],
       "versionActionsOptions": {
         "skipLockFileUpdate": true
       }
