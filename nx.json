@@ -64,7 +64,7 @@
     },
     "nx-release-publish": {
       "options": {
-        "packageRoot": "build/packages/{projectName}"
+        "packageRoot": "build/{projectRoot}"
       }
     }
   },
@@ -74,8 +74,13 @@
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
       "fallbackCurrentVersionResolver": "disk",
-      "manifestRootsToUpdate": ["build/packages/{projectName}"],
-      "preserveLocalDependencyProtocols": false,
+      "manifestRootsToUpdate": [
+      {
+        "path": "build/{projectRoot}",
+        "preserveLocalDependencyProtocols": true
+      }
+    ],
+      "preserveLocalDependencyProtocols": true,
       "versionActionsOptions": {
         "skipLockFileUpdate": true
       }
