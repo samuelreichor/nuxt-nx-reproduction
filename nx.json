@@ -73,20 +73,17 @@
     "version": {
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
-      "fallbackCurrentVersionResolver": "disk",
       "manifestRootsToUpdate": [
       {
         "path": "build/{projectRoot}",
-        "preserveLocalDependencyProtocols": true
+        "preserveLocalDependencyProtocols": false
       }
     ],
-      "preserveLocalDependencyProtocols": true,
       "versionActionsOptions": {
         "skipLockFileUpdate": true
       }
     },
     "changelog": {
-      "automaticFromRef": true,
       "projectChangelogs": {
         "renderOptions": {
           "authors": false
