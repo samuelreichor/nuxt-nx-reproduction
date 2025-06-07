@@ -14,8 +14,12 @@ export default defineConfig(() => ({
       tsconfigPath: path.join(__dirname, 'tsconfig.json'),
     }),
   ],
-  optimizeDeps: {
-    exclude: ['@test-nx/vue', '@test-nx/js'],
+  resolve: {
+    alias: {
+      '@test-nx/js': path.resolve(__dirname, '../js/src/index.ts'),
+      '@test-nx/vue': path.resolve(__dirname, '../vue/src/index.ts')
+    },
+    preserveSymlinks: true,
   },
   // Uncomment this if you are using workers.
   // worker: {

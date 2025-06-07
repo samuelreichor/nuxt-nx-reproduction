@@ -71,12 +71,16 @@
   "release": {
     "projects": ["packages/js", "packages/vue", "packages/nuxt"],
     "version": {
+      "specifierSource": "conventional-commits",
+      "currentVersionResolver": "git-tag",
+      "fallbackCurrentVersionResolver": "disk",
       "manifestRootsToUpdate": ["build/{projectRoot}"],
       "versionActionsOptions": {
         "skipLockFileUpdate": true
       }
     },
     "changelog": {
+      "automaticFromRef": true,
       "projectChangelogs": {
         "renderOptions": {
           "authors": false
