@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "license": "MIT",
-  "description": "An url builder to make queries from Craft CMS",
+  "description": "An url builder to make queries from Craft CMS X",
   "repository": "https://github.com/samuelreichor/query-api/tree/main/packages/js",
   "author": "Samuel Reichoer",
   "bugs": {
