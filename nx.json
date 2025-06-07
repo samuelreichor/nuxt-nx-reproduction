@@ -61,6 +61,33 @@
   "targetDefaults": {
     "test": {
       "dependsOn": ["^build"]
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "build/{projectRoot}"
+      }
+    }
+  },
+  "release": {
+    "projects": ["packages/js", "packages/vue", "packages/nuxt"],
+    "version": {
+      "manifestRootsToUpdate": ["build/{projectRoot}"],
+      "versionActionsOptions": {
+        "skipLockFileUpdate": true
+      }
+    },
+    "changelog": {
+      "projectChangelogs": {
+        "renderOptions": {
+          "authors": false
+        }
+      },
+      "workspaceChangelog": {
+        "createRelease": "github",
+        "renderOptions": {
+          "authors": false
+        }
+      }
     }
   }
 }

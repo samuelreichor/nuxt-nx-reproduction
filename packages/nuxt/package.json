@@ -2,35 +2,50 @@
   "name": "@test-nx/nuxt",
   "version": "0.0.1",
   "type": "module",
+  "license": "MIT",
+  "description": "Craft CMS Query Builder for Nuxt",
+  "repository": "https://github.com/samuelreichor/query-api/tree/main/packages/nuxt",
+  "author": "Samuel Reichoer",
+  "bugs": {
+    "url": "https://github.com/samuelreichor/query-api/issues"
+  },
+  "homepage": "https://samuelreichor.at/libraries/nuxt-craftcms",
+  "keywords": [
+    "Craft CMS",
+    "Query Builder",
+    "Query API",
+    "Nuxt"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist"
   ],
   "main": "./dist/module.mjs",
-  "module": "./dist/module.mjs",
-  "types": "./dist/module.d.ts",
+  "types": "./dist/types.d.mts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "development": "./src/module.ts",
-      "types": "./dist/module.d.ts",
-      "import": "./dist/module.mjs",
-      "default": "./dist/module.mjs"
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     }
   },
-  "dependencies": {
-    "@test-nx/vue": "workspace:*"
-  },
   "scripts": {
-    "prepack": "nuxt-module-build prepare",
+    "build:prepare": "nuxt-module-build prepare",
     "typecheck": "vue-tsc  --project tsconfig.json",
-    "build": "pnpm run typecheck && pnpm run build:transpile",
+    "build": "npm run build:prepare && npm run typecheck && npm run build:transpile",
     "build:nuxt-module": "nuxt-module-build build --outDir dist",
-    "build:transpile": "pnpm run build:nuxt-module",
-    "build:tarball": "pnpm pack",
+    "build:transpile": "npm run build:nuxt-module",
+    "build:tarball": "npm pack",
     "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
     "nuxt": ">=3.0.0 || 4.x"
+  },
+  "dependencies": {
+    "@test-nx/vue": "workspace:*",
+    "@test-nx/js": "workspace:*"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.8.4",
